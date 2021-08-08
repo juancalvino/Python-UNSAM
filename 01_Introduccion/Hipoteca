@@ -1,0 +1,56 @@
+15 saldo = 500000.0
+14 total_pagado = 0.0
+13 
+12 tasa = 0.05
+11 
+10 pago_mensual = 2684.11
+ 9 pago_extra = 1000
+ 8 pago_total = 0
+ 7 
+ 6 pago_extra_mes_comienzo = 61
+ 5 pago_extra_mes_fin = 108
+ 4 
+ 3 mes_pagado = 0
+ 2 
+ 1 while saldo > 0:
+16     if(pago_extra_mes_comienzo >= mes_pagado and mes_pagado <= pago_extra_mes_fin):
+ 1         pago_total = pago_mensual + pago_extra
+ 2     else:
+ 3         pago_total = pago_mensual
+ 4     
+ 5     mes_pagado += 1
+ 6     saldo = saldo * (1+tasa/12) - pago_total
+ 7     total_pagado = total_pagado + pago_total
+ 8 
+ 9 print('Total pagado', round(total_pagado, 2), '/ Meses', mes_pagado)
+
+------------------------------------------------------------------------------------
+
+ 7 saldo = 500000.0
+ 6 total_pagado = 0.0
+ 5 
+ 4 tasa = 0.05
+ 3 
+ 2 pago_mensual = 2684.11
+ 1 pago_adelantado = 1000
+8  pago_total = 0
+ 1 
+ 2 mes_adelanto = 12           
+ 3 mes_pagado = 0
+ 4 
+ 5 while saldo > 0:
+ 6     if(mes_adelanto > 0):
+ 7         mes_adelanto -= 1
+ 8         pago_total = pago_mensual + pago_adelantado
+ 9     else:
+10         pago_total = pago_mensual   
+11     
+12     mes_pagado += 1                 
+13     saldo = saldo * (1+tasa/12) - pago_total
+14     total_pagado = total_pagado + pago_total
+15 
+16 print('Total pagado', round(total_pagado, 2), '/ Meses', mes_pagado)
+~
+~
+~
+
